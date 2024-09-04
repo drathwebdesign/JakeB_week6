@@ -19,7 +19,9 @@ public class BaseBallBatController : MonoBehaviour
     }
 
     void Update() {
-        FollowMouse();
+        if (!GameManager.instance.isGameOver) {
+            FollowMouse();
+        }
         if (Input.GetMouseButtonDown(1)) {
             ToggleBatFlip();
         }

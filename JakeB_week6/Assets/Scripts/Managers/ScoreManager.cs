@@ -6,6 +6,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverScoreText;
     int score = 0;
 
     void Start()
@@ -24,5 +25,10 @@ public class ScoreManager : MonoBehaviour
     }
     private void UpdateScoreUI() {
         scoreText.text = "Splatted: " + score.ToString();
+    }
+    public void SetGameOverScore() {
+        if (gameOverScoreText != null) {
+            gameOverScoreText.text = "Total Splatted: " + score.ToString();
+        }
     }
 }
