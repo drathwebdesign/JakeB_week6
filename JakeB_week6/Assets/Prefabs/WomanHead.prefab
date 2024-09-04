@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3114204640906808511}
   - component: {fileID: 8240592729509844939}
   - component: {fileID: 6466876522438058003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WomanHead
   m_TagString: Woman
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ MeshCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

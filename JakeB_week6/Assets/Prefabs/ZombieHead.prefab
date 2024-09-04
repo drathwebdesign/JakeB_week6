@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6847432477721609567}
   - component: {fileID: 3805777914106455438}
   - component: {fileID: 3496371679445818358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ZombieHead
   m_TagString: Zombie
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ MeshCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

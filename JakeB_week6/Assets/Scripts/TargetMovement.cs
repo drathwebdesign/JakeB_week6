@@ -8,14 +8,18 @@ public class TargetMovement : MonoBehaviour
     public Vector2 randomForce, randomTorque;
     public float xRange;
 
+    private ScoreManager scoreManager;
+
     void Start() {
         rb = GetComponent<Rigidbody>();
+        scoreManager = FindObjectOfType<ScoreManager>();
         HandleMovement();
         HandleRotation();
         HandleSpawn();
     }
 
     void Update() {
+        DestroyOffScreen();
     }
 
     void HandleMovement() {
@@ -30,6 +34,27 @@ public class TargetMovement : MonoBehaviour
     }
 
     void HandleSpawn() {
-        transform.position = new Vector3(Random.Range(-xRange, xRange), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Random.Range(-xRange, xRange), -6, 0);
+    }
+
+    void DestroyOffScreen() {
+        if (transform.position.y < -10) {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Backboard")) {
+            if (transform.tag == "Zombie") {
+                scoreManager.GainScore();
+                Destroy(gameObject);
+            } else if (transform.tag == "Woman" || transform.tag == "Police") {
+                GameManager.instance.LoseLife();
+                Destroy(gameObject);
+            } else if (transform.tag == "Mystery") {
+                // Mystery stuff
+                Destroy(gameObject);
+            }
+        }
     }
 }
