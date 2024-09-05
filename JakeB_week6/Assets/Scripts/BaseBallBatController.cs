@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseBallBatController : MonoBehaviour
 {
-    public float rotationSpeed = 30f;  // Speed of rotation after swing
+    public float rotationSpeed = 40f;  // Speed of rotation after swing
     public float hitForce = 20f;
     private Quaternion currentRotation;
 

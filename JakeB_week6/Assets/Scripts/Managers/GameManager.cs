@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour {
         // Update the fill amount of the health bar
         healthImage.fillAmount = (float)currentLives / lives / 3.3f;
     }
+
+    //GameOver
     private void GameOver() {
         isGameOver = true;
         gameOverCanvas.SetActive(true);
