@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TargetMovement : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class TargetMovement : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
+        //Normal hit
         if (collision.gameObject.CompareTag("Backboard")) {
             if (transform.tag == "Zombie") {
                 scoreManager.GainScore();
@@ -56,5 +58,16 @@ public class TargetMovement : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        //Home Run
+        if (collision.gameObject.CompareTag("HomeRun")) {
+            if (transform.tag == "Zombie") {
+                scoreManager.GainScore(10);
+                Destroy(gameObject);
+            } else if (transform.tag == "Woman" || transform.tag == "Police") {
+                GameManager.instance.GainLife(2);
+                Destroy(gameObject);
+            }
+        }
     }
+
 }

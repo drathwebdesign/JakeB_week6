@@ -42,6 +42,15 @@ public class GameManager : MonoBehaviour {
             GameOver();
         }
     }
+
+    public void GainLife(int amount = 1) {
+        currentLives += amount;
+        if (currentLives > lives) {
+            currentLives = lives;  // Ensure lives don't go over 3
+        }
+        UpdateHealthUI();
+    }
+
     private void UpdateHealthUI() {
         // Update the fill amount of the health bar
         healthImage.fillAmount = (float)currentLives / lives / 3.3f;

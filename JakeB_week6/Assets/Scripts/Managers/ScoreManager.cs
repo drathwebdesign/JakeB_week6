@@ -19,8 +19,8 @@ public class ScoreManager : MonoBehaviour
     {
         
     }
-    public void GainScore() {
-        score++;
+    public void GainScore(int amount = 1) {
+        score += amount;
         UpdateScoreUI();
     }
     private void UpdateScoreUI() {
