@@ -22,6 +22,4 @@ public class DifficultyButton : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload current scene
     }
 }
-
-
 // Set a playerPref over here & Get That value in Spawn Manager
